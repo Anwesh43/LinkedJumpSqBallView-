@@ -180,4 +180,27 @@ class JumpSqBallView(ctx : Context) : View(ctx) {
             curr.startUpdating(cb)
         }
     }
+
+    data class Renderer(var view : JumpSqBallView) {
+
+        private val animator : Animator = Animator(view)
+        private val jsb : JumpSqBall = JumpSqBall(0)
+        private val paint : Paint = Paint(Paint.ANTI_ALIAS_FLAG)
+
+        fun render(canvas : Canvas) {
+            canvas.drawColor(backColor)
+            jsb.draw(canvas, paint)
+            animator.animate {
+                jsb.update {
+                    animator.stop()
+                }
+            }
+        }
+
+        fun handleTap() {
+            jsb.startUpdating {
+                animator.start()
+            }
+        }
+    }
 }
