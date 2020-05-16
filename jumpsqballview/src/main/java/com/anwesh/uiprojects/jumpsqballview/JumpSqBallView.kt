@@ -35,8 +35,8 @@ fun Canvas.drawRotatingSqBall(scale : Float, size : Float, h : Float, paint : Pa
     val x : Float = -size
     save()
     rotate(rotDeg * sf1)
-    drawRect(RectF(-size + 2 * r, -sqSize / (2 * sqHFactor), x + 2 * r + 2 * sqSize, sqSize / (2 * sqHFactor)), paint)
-    drawCircle(x + r,  (0.5f * h - r) * sf2, r, paint)
+    drawRect(RectF(-size + 2 * r, -sqSize / (2 * sqHFactor), x + 2 * r + sqSize, sqSize / (2 * sqHFactor)), paint)
+    drawCircle(x + r,  -(0.5f * h - r) * sf2, r, paint)
     restore()
 }
 
