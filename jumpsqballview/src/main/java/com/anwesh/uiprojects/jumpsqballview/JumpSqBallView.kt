@@ -50,3 +50,19 @@ fun Canvas.drawRSBNode(i : Int, scale : Float, paint : Paint) {
     drawRotatingSqBall(scale, size, h, paint)
     restore()
 }
+
+class JumpSqBallView(ctx : Context) : View(ctx) {
+
+    override fun onDraw(canvas : Canvas) {
+
+    }
+
+    override fun onTouchEvent(event : MotionEvent) : Boolean {
+        when (event.action) {
+            MotionEvent.ACTION_DOWN -> {
+
+            }
+        }
+        return true
+    }
+}
