@@ -206,4 +206,13 @@ class JumpSqBallView(ctx : Context) : View(ctx) {
             }
         }
     }
+
+    companion object {
+
+        fun create(activity : Activity) : JumpSqBallView {
+            val view : JumpSqBallView = JumpSqBallView(activity)
+            activity.setContentView(view)
+            return view
+        }
+    }
 }
